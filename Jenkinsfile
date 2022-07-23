@@ -81,8 +81,6 @@ pipeline {
     stage('provision train- schedule application on the eks cluster') {
       steps {
          withAWS(credentials: 'terraform_user', region: 'us-east-1') {
-           sh label: '', script: 'CERTIFICATE_ARN=$(terraform output -raw multi_shop_certificate_arn)'
-           sh label: '', script: 'envsubst $CERTIFICATE_ARN < ./multi_shop.yaml | tee multi_shop.yaml'
            sh label: '', script: 'kubectl apply -f ./multi_shop.yaml'
         }
       }
@@ -90,7 +88,7 @@ pipeline {
     stage('waiting for your to create a CNAM record and verify acm certificate in your external domain') {
       steps {
          withAWS(credentials: 'terraform_user', region: 'us-east-1') {
-          sh label: '', script: 'sleep 300'
+          sh label: '', script: 'sleep 60'
         }
       }
     }
