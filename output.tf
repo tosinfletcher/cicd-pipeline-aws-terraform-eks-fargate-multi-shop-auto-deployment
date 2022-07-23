@@ -4,12 +4,6 @@ output "connect_computer_to_cluster" {
 }
 
 
-output "multi_shop_certificate_arn" {
-  description = "The arn of the multi-shop certificate"
-  value       = aws_acm_certificate.multi_shop_certificate.arn
-}
-
-
 output "aws_load_balancer_controller_role_arn" {
   description = "Arn role for aws load balancer"
   value       = aws_iam_role.load_balancer_role_trust_policy.arn
