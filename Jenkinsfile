@@ -86,7 +86,7 @@ pipeline {
         }
       }
     }
-    stage('waiting for your to verify acm certificate in your external domain') {
+    stage('waiting for your to create a CNAM record and verify acm certificate in your external domain') {
       steps {
          withAWS(credentials: 'terraform_user', region: 'us-east-1') {
           sh label: '', script: 'sleep 300'
