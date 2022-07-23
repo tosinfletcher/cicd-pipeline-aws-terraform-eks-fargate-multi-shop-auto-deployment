@@ -1,4 +1,4 @@
-# multi_shop
+# cicd-pipeline-aws-terraform-eks-fargate-multi-shop-auto-deployment
 
 
 Prerequisite:
