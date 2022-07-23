@@ -85,7 +85,7 @@ pipeline {
         }
       }
     }
-    stage('waiting for 1 minutes') {
+    stage('wait for 1 minutes') {
       steps {
          withAWS(credentials: 'terraform_user', region: 'us-east-1') {
           sh label: '', script: 'sleep 60'
