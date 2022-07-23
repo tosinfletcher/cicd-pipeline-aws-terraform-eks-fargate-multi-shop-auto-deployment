@@ -12,7 +12,7 @@ Prerequisite:
 
 Usage:
 
-1.  Update the alb.ingress.kubernetes.io/certificate-arn: <arn_of_the_acm_certificate_that_was_pre-created>
+1.  Update the alb.ingress.kubernetes.io/certificate-arn: <arn_of_the_acm_certificate_that_was_pre-created> section within the multi_shop.yaml file
 
 2.  Create a CI/CD pipeline on Jenkins with GitHub hook trigger for GITScm polling configured
 
