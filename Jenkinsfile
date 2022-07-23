@@ -82,8 +82,7 @@ pipeline {
       steps {
          withAWS(credentials: 'terraform_user', region: 'us-east-1') {
            sh label: '', script: 'CERTIFICATE_ARN=$(terraform output -raw multi_shop_certificate_arn)'
-           sh label: '', script: 'sleep 20'
-           sh label: '', script: 'envsubst $CERTIFICATE_ARN < ./multi_shop.yaml'
+           sh label: '', script: 'envsubst $CERTIFICATE_ARN < ./multi_shop.yaml | tee multi_shop.yaml'
            sh label: '', script: 'kubectl apply -f ./multi_shop.yaml'
         }
       }
